@@ -2,7 +2,7 @@ App = {
   web3Provider: null,
   contracts: {},
   names: new Array(),
-  url: 'http://127.0.0.1:8545',
+  url: 'http://127.0.0.1:7545',
   chairPerson:null,
   currentAccount:null,
   init: function() {
@@ -31,6 +31,8 @@ App = {
       App.web3Provider = new Web3.providers.HttpProvider(App.url);
     }
     web3 = new Web3(App.web3Provider);
+
+    ethereum.enable();
 
     App.populateAddress();
     return App.initContract();
